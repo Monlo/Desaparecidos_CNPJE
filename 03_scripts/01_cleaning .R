@@ -12,7 +12,7 @@ Sys.setlocale("LC_ALL", "es_ES.UTF-8") # locale para Mac
 # Sys.setlocale("LC_ALL", "Spanish") # locale para Windows
 options(scipen = 999)
 
-## Paquetes ----
+## Cargar paquetes ----
 library(pacman)
 p_load(readxl, tidyverse, janitor)
 

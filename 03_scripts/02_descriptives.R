@@ -11,6 +11,10 @@ Sys.setlocale("LC_ALL", "es_ES.UTF-8") # locale para Mac
 # Sys.setlocale("LC_ALL", "Spanish") # locale para Windows
 options(scipen = 999)
 
+## Cargar paquetes ----
+library(pacman)
+p_load(tidyverse, ggplot)
+
 # Delitos nacionales
 delitos <- read_csv("02_out/delitos.csv") %>% 
   filter(entidad_federativa == "Estados Unidos Mexicanos")
@@ -53,3 +57,7 @@ ggplot(delitos_selected, aes(x = Year, y = Value, group = delito, color = delito
     subtitle = "Cifras nacionales"
   ) +
   theme_minimal()
+
+ggsave("02_out/delitos.png", width = 16, height = 9, dpi = 200)  
+
+
